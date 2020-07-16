@@ -7,7 +7,10 @@
             <img class="user-profile-image rounded-circle" src="https://placedog.net/550/550" alt="user profile">
         </div>
         <div class="col-8">
-            <div><h1 class="user-profile-username">{{ $user->username }}</h1></div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="user-profile-username">{{ $user->username }}</h1>
+                <a class="btn btn-secondary" href="#">Add new post</a>
+            </div>
             <div class="user-profile-numbers d-flex">
                 <div class="pr-4">
                     <p><strong class="profile-numbers pr-2">302</strong>Publications</p>
@@ -19,9 +22,9 @@
                     <p><strong class="profile-numbers pr-2">12</strong>Following</p>
                 </div>
             </div>
-            <div class="user-profile-website pt-4"><p class="mb-0 font-weight-bold">doggy-remaker.guau</p></div>
-            <div class="user-profile-info"><p class="mb-0">We're a global community of millions of people learning to code together. We're an open source, donor-supported, 501(c)(3) nonprofit.</p></div>
-            <div class="user-profile-url"><a href="#">doggy-remaker.guau</a></div>
+            <div class="user-profile-website pt-4"><p class="mb-0 font-weight-bold">{{ $user->profile->title }}</p></div>
+            <div class="user-profile-info"><p class="mb-0">{{ $user->profile->description }}</p></div>
+            <div class="user-profile-url"><a href="#">{{ $user->profile->url }}</a></div>
         </div>
     </div>
     <div class="grid pt-5">
