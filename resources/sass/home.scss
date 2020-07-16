@@ -1,0 +1,12 @@
+.user-profile-image {
+    height: 10rem; 
+    width: 10rem;
+    object-fit: cover;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 350px;
+    gap: 1.5rem;
+}
