@@ -7,7 +7,7 @@
             <img class="user-profile-image rounded-circle" src="https://placedog.net/550/550" alt="user profile">
         </div>
         <div class="col-8">
-            <div><h1 class="user-profile-username">Doggy remaker</h1></div>
+            <div><h1 class="user-profile-username">{{ $user->username }}</h1></div>
             <div class="user-profile-numbers d-flex">
                 <div class="pr-4">
                     <p><strong class="profile-numbers pr-2">302</strong>Publications</p>
