@@ -65912,15 +65912,11 @@ if (document.getElementById('follow-button-container')) {
   var element = document.getElementById('follow-button-container');
   var props = Object.assign({}, element.dataset);
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(FollowButton, props), element);
-}
-
-if (document.getElementsByClassName('follow-button-container')) {
-  var _element = document.getElementsByClassName('follow-button-container');
-
-  var _props = Object.assign({}, _element.dataset);
-
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(FollowButton, _props), _element);
-}
+} // if (document.getElementsByClassName('follow-button-container')) {
+//     const element = document.getElementsByClassName('follow-button-container');
+//     const props = Object.assign({}, element.dataset)
+//     ReactDOM.render(<FollowButton {...props} />, element);
+// }
 
 /***/ }),
 

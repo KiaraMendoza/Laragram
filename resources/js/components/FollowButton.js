@@ -35,10 +35,10 @@ if (document.getElementById('follow-button-container')) {
     ReactDOM.render(<FollowButton {...props} />, element);
 }
 
-if (document.getElementsByClassName('follow-button-container')) {
-    const element = document.getElementsByClassName('follow-button-container');
+// if (document.getElementsByClassName('follow-button-container')) {
+//     const element = document.getElementsByClassName('follow-button-container');
 
-    const props = Object.assign({}, element.dataset)
+//     const props = Object.assign({}, element.dataset)
 
-    ReactDOM.render(<FollowButton {...props} />, element);
-}
+//     ReactDOM.render(<FollowButton {...props} />, element);
+// }

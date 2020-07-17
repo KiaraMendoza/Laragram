@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "Laragram",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Your friendly social media for posting random things",
     "keywords": [
         "framework",
         "laravel"
