@@ -12,8 +12,9 @@ class ProfilesController extends Controller
     {
         //$user = User::findOrFail($user); -> Instead of passing $user and use User::findOrFail we can simple let Laravel search for the User for us passing \App\User $user.
         // return view('profiles/index', ['user' => $user ]); -> This also can be refactor using compact('user');
+        $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
 
-        return view('profiles/index', compact('user'));
+        return view('profiles/index', compact('user', 'follows'));
     }
 
     public function edit(User $user)

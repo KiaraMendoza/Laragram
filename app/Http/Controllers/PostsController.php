@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -10,6 +11,17 @@ class PostsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function index()
+    {
+        $users = auth()->user()->following()->pluck('profiles.user_id');
+
+        //WIP : $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+
+        $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5); // latest() = .orderBy('created_at', 'DESC'); // 'user' is the relationship between the posts and their users.
+
+        return view('posts/index', compact('posts', 'follows'));
     }
 
     public function create()

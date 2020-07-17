@@ -7,10 +7,10 @@
             <img class="user-profile-image rounded-circle" src="{{ $user->profile->profileImage() }}" alt="user profile">
         </div>
         <div class="col-8">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex gap-1 pb-2">
+            <div class="d-flex justify-content-between align-items-center pb-2">
+                <div class="d-flex align-items-center">
                     <h1 class="h2 user-profile-username mb-0 pr-2">{{ $user->username }}</h1>
-                    <button class="btn btn-primary py-0">Follow</button>
+                    <div id="follow-button-container" data-userId="{{ $user->id }}" data-follows="{{ $follows }}"></div>
                 </div>
                 @can('update', $user->profile)
                     <a class="btn btn-secondary" href="/post/create">Add new post</a>
@@ -26,10 +26,10 @@
                     <p><strong class="profile-numbers pr-2">{{ $user->posts->count() }}</strong>Publications</p>
                 </div>
                 <div class="pr-4">
-                    <p><strong class="profile-numbers pr-2">122</strong>Followers</p>
+                    <p><strong class="profile-numbers pr-2">{{ $user->profile->followers->count() }}</strong>Followers</p>
                 </div>
                 <div class="pr-4">
-                    <p><strong class="profile-numbers pr-2">12</strong>Following</p>
+                    <p><strong class="profile-numbers pr-2">{{ $user->following->count() }}</strong>Following</p>
                 </div>
             </div>
             <div class="user-profile-website pt-4"><p class="mb-0 font-weight-bold">{{ $user->profile->title }}</p></div>

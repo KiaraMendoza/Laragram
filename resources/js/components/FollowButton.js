@@ -1,24 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 
-function Example() {
+function FollowButton(props) {
+    const [follows, setFollows] = useState(props.follows);
+
+    const FollowUser = () => {
+        axios.post('/follow/'+ props.userid)
+            .then(response => {
+                alert('Followed!');
+                setFollows(!follows);
+            })
+            .catch(errors => {
+                if (errors.response.status == 401 ) {
+                    window.location = '/login';
+                }
+            }
+        );
+        return;
+    }
+
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">Example Component</div>
-
-                        <div className="card-body">I'm an example component!</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <button onClick={FollowUser} class="btn btn-primary">{follows ? 'Unfollow' : 'Follow'}</button>
     );
 }
 
-export default Example;
+export default FollowButton;
 
-if (document.getElementById('example')) {
-    ReactDOM.render(<Example />, document.getElementById('example'));
+if (document.getElementById('follow-button-container')) {
+    const element = document.getElementById('follow-button-container');
+
+    const props = Object.assign({}, element.dataset)
+
+    ReactDOM.render(<FollowButton {...props} />, element);
+}
+
+if (document.getElementsByClassName('follow-button-container')) {
+    const element = document.getElementsByClassName('follow-button-container');
+
+    const props = Object.assign({}, element.dataset)
+
+    ReactDOM.render(<FollowButton {...props} />, element);
 }
