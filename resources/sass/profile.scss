@@ -1,5 +1,5 @@
 .user-profile-image {
-    height: 10rem; 
+    height: 10rem;
     width: 10rem;
     object-fit: cover;
 }
@@ -14,10 +14,6 @@
 .grid-item {
     width: 100%;
     height: 100%;
-    img {
-        width: 100%;
-        height: 100%;
-    }
 }
 
 @media (min-width: 760px) {

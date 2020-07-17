@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +23,5 @@ Auth::routes();
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 
 Route::get('/post/create', 'PostsController@create')->name('post.create');
+Route::get('/post/{post}', 'PostsController@show')->name('post.show');
 Route::post('/post', 'PostsController@store')->name('post.store');

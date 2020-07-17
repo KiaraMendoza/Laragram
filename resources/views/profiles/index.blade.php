@@ -30,7 +30,9 @@
     <div class="grid pt-5">
         @foreach($user->posts as $post)
             <div class="grid-item">
-                <img src="/storage/{{ $post->image }}" alt="#">
+                <a href="/post/{{ $post->id }}">
+                    <img src="/storage/{{ $post->image }}" alt="#">
+                </a>
             </div>
         @endforeach
     </div>

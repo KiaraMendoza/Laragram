@@ -10947,11 +10947,6 @@ a.text-dark:focus {
   height: 100%;
 }
 
-.grid-item img {
-  width: 100%;
-  height: 100%;
-}
-
 @media (min-width: 760px) {
   .grid {
     gap: 1.5rem;
