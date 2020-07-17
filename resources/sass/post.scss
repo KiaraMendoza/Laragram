@@ -1,0 +1,13 @@
+.post-detail a {
+    color: #000;
+    text-decoration: none;
+    &.follow {
+        color: #3490dc;
+    }
+}
+
+.post-user-info {
+    img {
+        max-width: 3rem;
+    }
+}

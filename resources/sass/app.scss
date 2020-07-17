@@ -9,6 +9,7 @@
 
 // Pages
 @import 'profile';
+@import 'post';
 
 * {
     box-sizing: border-box;
@@ -23,6 +24,6 @@ img {
 
 @media (min-width: 1200px) {
     .container-xl, .container-lg, .container-md, .container-sm, .container {
-        max-width: 935px; 
+        max-width: 935px;
     }
 }
