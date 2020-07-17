@@ -1,3 +1,15 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito:wght@700&display=swa');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Pages
+@import 'profile';
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,14 +21,8 @@ img {
     max-height: 100%;
 }
 
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:wght@700&display=swa');
-
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-// Pages
-@import 'home';
+@media (min-width: 1200px) {
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: 935px; 
+    }
+}

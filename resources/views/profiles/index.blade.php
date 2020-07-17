@@ -8,12 +8,12 @@
         </div>
         <div class="col-8">
             <div class="d-flex justify-content-between align-items-center">
-                <h1 class="user-profile-username">{{ $user->username }}</h1>
-                <a class="btn btn-secondary" href="#">Add new post</a>
+                <h1 class="user-profile-username mb-0 pb-2">{{ $user->username }}</h1>
+                <a class="btn btn-secondary" href="/post/create">Add new post</a>
             </div>
             <div class="user-profile-numbers d-flex">
                 <div class="pr-4">
-                    <p><strong class="profile-numbers pr-2">302</strong>Publications</p>
+                    <p><strong class="profile-numbers pr-2">{{ $user->posts->count() }}</strong>Publications</p>
                 </div>
                 <div class="pr-4">
                     <p><strong class="profile-numbers pr-2">122</strong>Followers</p>
@@ -28,9 +28,11 @@
         </div>
     </div>
     <div class="grid pt-5">
-        <div class="grid-item"><img src="https://placedog.net/550/550" alt="#"></div>
-        <div class="grid-item"><img src="https://placedog.net/550/550" alt="#"></div>
-        <div class="grid-item"><img src="https://placedog.net/550/550" alt="#"></div>
+        @foreach($user->posts as $post)
+            <div class="grid-item">
+                <img src="/storage/{{ $post->image }}" alt="#">
+            </div>
+        @endforeach
     </div>
 </div>
 @endsection
