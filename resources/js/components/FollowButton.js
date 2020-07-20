@@ -21,24 +21,25 @@ function FollowButton(props) {
     }
 
     return (
-        <button onClick={FollowUser} class="btn btn-primary">{follows ? 'Unfollow' : 'Follow'}</button>
+        <button onClick={FollowUser} className="btn btn-primary">{follows ? 'Unfollow' : 'Follow'}</button>
     );
 }
 
 export default FollowButton;
 
 if (document.getElementById('follow-button-container')) {
-    const element = document.getElementById('follow-button-container');
+    let element = document.getElementById('follow-button-container');
 
-    const props = Object.assign({}, element.dataset)
+    let props = Object.assign({}, element.dataset)
 
     ReactDOM.render(<FollowButton {...props} />, element);
 }
 
-// if (document.getElementsByClassName('follow-button-container')) {
-//     const element = document.getElementsByClassName('follow-button-container');
-
-//     const props = Object.assign({}, element.dataset)
-
-//     ReactDOM.render(<FollowButton {...props} />, element);
-// }
+if (document.getElementsByClassName('follow-button-container')) {
+    let elements = [...document.getElementsByClassName('follow-button-container')];
+    console.log(elements)
+    elements.map(element => {
+        let props = Object.assign({}, element.dataset)
+        ReactDOM.render(<FollowButton {...props} />, element);
+    })
+}

@@ -14,7 +14,7 @@
                 <div class="post-user-info row align-items-center mb-3">
                     <a class="d-flex align-items-center" href="/profile/{{ $post->user->id }}"
                         ><img class="rounded-circle w-100 mr-3" src="{{ $post->user->profile->profileImage() }}" alt="#">
-                        <h3 class="font-weight-bold mb-0">{{ $post->user->username }}</h3>
+                        <h3 class="font-weight-bold mb-0 mr-3">{{ $post->user->username }}</h3>
                     </a>
                     <div class="follow-button-container" data-userId="{{ $post->user->id }}"></div>
                 </div>
