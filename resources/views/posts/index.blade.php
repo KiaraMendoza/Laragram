@@ -16,7 +16,7 @@
                         ><img class="rounded-circle w-100 mr-3" src="{{ $post->user->profile->profileImage() }}" alt="#">
                         <h3 class="font-weight-bold mb-0 mr-3">{{ $post->user->username }}</h3>
                     </a>
-                    <div class="follow-button-container" data-userId="{{ $post->user->id }}"></div>
+                    <div class="follow-button-container" data-userId="{{ $post->user->id }}" data-follows="true"></div>
                 </div>
                 <hr>
                 <p class="mb-0"> {{ $post->title }} </p>
