@@ -11005,6 +11005,10 @@ img {
   padding-right: 0;
 }
 
+.navbar-nav .nav-link {
+  text-align: right;
+}
+
 @media (min-width: 1200px) {
   .container-xl,
   .container-lg,
