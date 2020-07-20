@@ -21,7 +21,7 @@ class PostsController extends Controller
 
         $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5); // latest() = .orderBy('created_at', 'DESC'); // 'user' is the relationship between the posts and their users.
 
-        return view('posts/index', compact('posts', 'follows'));
+        return view('posts/index', compact('posts'));
     }
 
     public function create()
